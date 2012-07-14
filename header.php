@@ -43,7 +43,7 @@
     
 
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
+    
     <script src="js/libs/modernizr-2.0.6.min.js"></script>
     <?php
     	if ( is_singular() && get_option( 'thread_comments' ) )

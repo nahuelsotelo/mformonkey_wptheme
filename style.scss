@@ -1,6 +1,11 @@
 @import 'mixins.scss';
 
 //Colores
+$news: #9e6bb8; /* LILA */
+$shop: #a2bf6d; /* VERDE */
+$works: #ef939e; /* ROSA */
+$about: #8eb5b4; /* AZUL */
+$contact: #e3bd58; /* MOSTAZA */
 
 
 /*
@@ -12,7 +17,7 @@ Author URL: http://www.nahuelsotelo.com
 Version: 1.0
 */
 
-@include font-face('Yanone Kaffeesatz', '/fonts/YanoneKaffeesatz-Regular');
+@include font-face('Yanone Kaffeesatz', 'fonts/YanoneKaffeesatz-Regular');
 
 /* ============== [ INDICE ] ==============
 
@@ -72,50 +77,61 @@ X - HELPERS
 
 @import 'reset.scss';
 
-/*----------------------------------------------------------------------------------*/
 /* =1 - GENERAL
-------------------------------------------------------------------------------------*/
-body {
-    color: #666;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 100%; /* 16px */
-    line-height: 1.5;
-}
-a {
-	text-decoration: none;
-}
-section h1 {
-    color: #9e6bb8; /*LILA*/
-    font-family:  'Yanone Kaffeesatz', Courier, monospace;
-    font-size: 300%; /*48px;*/
-    margin-bottom: 16px;
-    text-transform: uppercase;
-}
-#content.shop h1  {
-    color: #a2bf6d; /*VERDE*/
-}
-#content.works h1 {
-    color: #ef939e; /*ROSA*/
-}
-#content.about h1 {
-    color: #8eb5b4; /*AZUL*/
-}
+----------------------------------------------------------------------------*/
+    /* =1.1 - LAYOUT
+    --------------------------------------------------------*/
+    body {
+        color: #666;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 100%; /* 16px */
+        line-height: 1.5;
+    }
+
+    /* =1.2 - TYPE
+    --------------------------------------------------------*/
+    /* LINKS */
+    a {
+    	text-decoration: none;
+    }
+
+    /* HEADINGS */
+    h1,h2,h3,h4,h5,h6,p,ul {
+        margin-top: 0;
+    }
+    section h1 {
+        color: $news;
+        font-family:  'Yanone Kaffeesatz', Courier, monospace;
+        font-size: 300%; /*48px;*/
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+    #content.shop h1  {
+        color: $shop; 
+    }
+    #content.works h1 {
+        color: $works;
+    }
+    #content.about h1 {
+        color: $about;
+    }
 
 
-section h2,
-.news article h1 {
-    font-family: Georgia,"Times New Roman",Times;
-    font-size: 150%; /*24px*/
-    font-style: italic;
-    font-weight: normal;
-}
-.news article h1 a {
-    color: #9e6bb8; /*LILA*/
-}
-.news article h1 a:hover {
-    background: #9e6bb8; /*LILA*/
-    color: #FFF;
-}
+    section h2,
+    .news article h1 {
+        font-family: Georgia,"Times New Roman",Times;
+        font-size: 150%; /*24px*/
+        font-style: italic;
+        font-weight: normal;
+    }
+    .news article h1 a {
+        color: $news;
+    
+        &:hover {
+            background: $news;
+            color: #FFF;
+        }
+    }
 section p {
     margin-bottom: 16px;
 }
@@ -130,7 +146,7 @@ section a:visited,
 footer a,
 footer a:visited {
     border-bottom: 1px dotted;
-    color: #a2bf6d;  
+    color: $shop;  
     position: relative;
     -webkit-transition-property : background, color ;
     -webkit-transition-duration : .4s;
@@ -138,7 +154,7 @@ footer a:visited {
 }
 section a:hover,
 footer a:hover {
-	background: #a2bf6d;
+	background: $shop;
 	color: #fff;
 }
 section a:active,
@@ -233,64 +249,89 @@ section {
 	-webkit-transition-duration : .5s;
 	-webkit-timing-function : ease-in-out;
 }
-.nav-bar nav li a { color: #9e6bb8; } /*LILA*/
-.nav-bar nav li a[href*=shop] { color: #a2bf6d; } /*VERDE*/
-.nav-bar nav li a[href*=shop]:hover { background: #a2bf6d; } /*VERDE*/
+.nav-bar nav li a { color: $news; }
+.nav-bar nav li a[href*=shop] { color: $shop; }
+.nav-bar nav li a[href*=shop]:hover { background: $shop; }
 
-.nav-bar nav li a[href*=works] { color: #ef939e; } /*ROSA*/
-.nav-bar nav li a[href*=works]:hover { background: #ef939e; } /*ROSA*/
+.nav-bar nav li a[href*=works] { color: $works; }
+.nav-bar nav li a[href*=works]:hover { background: $works; }
 
-.nav-bar nav li a[href*=about] { color: #8eb5b4; } /*AZUL*/
-.nav-bar nav li a[href*=about]:hover { background: #8eb5b4; } /*AZUL*/
+.nav-bar nav li a[href*=about] { color: $about; }
+.nav-bar nav li a[href*=about]:hover { background: $about; }
 
-.nav-bar nav li a[href*=mailto]  { color: #e3bd58; } /*AMARILLO*/
-.nav-bar nav li a[href*=mailto]:hover{ background: #e3bd58; } /*AMARILLO*/
+.nav-bar nav li a[href*=mailto]  { color: $contact; }
+.nav-bar nav li a[href*=mailto]:hover{ background: $contact; }
 
 
 .nav-bar nav li a:hover {
     color: #fff;
-    background: #9e6bb8; /*LILA*/
+    background: $news;
 }
 
 /* =2.3 - MENU SOCIAL (#main-nav)
 -------------------------------------------------------------------*/
 .nav-bar #menu-social {
     float: right;
-    height: 34px;       
-}
-.nav-bar #menu-social li {
-    display: inline-block;
-    list-style: none;
-}
+    height: 34px;
 
+    li {
+        float: left;
+        list-style: none;
+        margin-right: 10px;
 
-.nav-bar #menu-social li a {
-    background-repeat: no-repeat;
-    direction: ltr;
-    display: block;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -999em;
-    width: 34px;
-        height: 34px;
+        a {
+            background-repeat: no-repeat;
+            direction: ltr;
+            display: block;
+            overflow: hidden;
+            text-align: left;
+            text-indent: -999em;
+            width: 34px;
+                height: 34px;
+
+            &[href*=twitter] {
+                background-image: url('images/social-twitter.png');
+            }
+            &[href*=flickr] {
+                background-image: url('images/social-flickr.png');
+            }
+            &[href*=twitter],
+            &[href*=flickr] {
+                &:hover {
+                    -moz-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                    
+                    -moz-transition: -moz-transform 0.4s ease-in-out;
+                    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+                    -o-transition: -o-transform 0.4s ease-in-out;
+                    -ms-transition: -ms-transform 0.4s ease-in-out;
+                    transition: transform 0.4s ease-in-out;
+                }
+            }
+            &[href*=subscribe] {
+                color: $contact;
+                line-height: 34px;
+                font-family: 'Yanone Kaffeesatz', Courier, monospace;
+                @include font-rem(20px);
+                text-indent: 0;
+                width: auto;
+                    height: 34px;
+                
+                &:before,
+                &:after {
+                    content: ' · ';
+                }
+                &:hover {
+                    color: #FFF;
+                }
+            }
+        }
+    }
 }
-
-.nav-bar #menu-social li a[href*=twitter] { background-image: url('images/social-twitter.png');}
-.nav-bar #menu-social li a[href*=flickr] { background-image: url('images/social-flickr.png');}
-
-.nav-bar #menu-social li a:hover {
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-    
-    -moz-transition: -moz-transform 0.4s ease-in-out;
-    -webkit-transition: -webkit-transform 0.4s ease-in-out;
-    -o-transition: -o-transform 0.4s ease-in-out;
-    -ms-transition: -ms-transform 0.4s ease-in-out;
-    transition: transform 0.4s ease-in-out;
-}
+/* NEWSLETTER*/
 
 /*----------------------------------------------------------------------------------*/
 /* =3 - FOOTER
@@ -431,7 +472,7 @@ footer {
 .comment-meta {
     background: #E6E6E6;
     border-radius: 0;
-    color: #666666;
+    color: #666;
     font-size: 81.25%;
     margin: 0 0 1em;
     padding: 6px 12px;
@@ -440,7 +481,7 @@ footer {
 }
 .commentlist .avatar {
     border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 1px 2px #CCCCCC;
+    box-shadow: 0 1px 2px #CCC;
     
     padding: 0;
     position: absolute;
@@ -502,7 +543,4 @@ footer {
     overflow: hidden; }
 .cf:after {
     clear: both;
-}
-.cf {
-    zoom: 1;
 }

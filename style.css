@@ -1,3 +1,8 @@
+/* LILA */
+/* VERDE */
+/* ROSA */
+/* AZUL */
+/* MOSTAZA */
 /*
 Theme name: MforMonkey
 Theme URL: http://www.mformonkey.com
@@ -8,8 +13,8 @@ Version: 1.0
 */
 @font-face {
   font-family: "Yanone Kaffeesatz";
-  src: url("/fonts/YanoneKaffeesatz-Regular.eot");
-  src: url("/fonts/YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/YanoneKaffeesatz-Regular.woff") format("woff"), url("/fonts/YanoneKaffeesatz-Regular.ttf") format("truetype"), url("/fonts/YanoneKaffeesatz-Regular.svg#Yanone Kaffeesatz") format("svg");
+  src: url("fonts/YanoneKaffeesatz-Regular.eot");
+  src: url("fonts/YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/YanoneKaffeesatz-Regular.woff") format("woff"), url("fonts/YanoneKaffeesatz-Regular.ttf") format("truetype"), url("fonts/YanoneKaffeesatz-Regular.svg#Yanone Kaffeesatz") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -459,9 +464,10 @@ td {
   padding: 0.2em 0;
 }
 
-/*----------------------------------------------------------------------------------*/
 /* =1 - GENERAL
-------------------------------------------------------------------------------------*/
+----------------------------------------------------------------------------*/
+/* =1.1 - LAYOUT
+--------------------------------------------------------*/
 body {
   color: #666;
   font-family: Arial,Helvetica,sans-serif;
@@ -470,13 +476,20 @@ body {
   line-height: 1.5;
 }
 
+/* =1.2 - TYPE
+--------------------------------------------------------*/
+/* LINKS */
 a {
   text-decoration: none;
 }
 
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin-top: 0;
+}
+
 section h1 {
   color: #9e6bb8;
-  /*LILA*/
   font-family: 'Yanone Kaffeesatz', Courier, monospace;
   font-size: 300%;
   /*48px;*/
@@ -486,17 +499,14 @@ section h1 {
 
 #content.shop h1 {
   color: #a2bf6d;
-  /*VERDE*/
 }
 
 #content.works h1 {
   color: #ef939e;
-  /*ROSA*/
 }
 
 #content.about h1 {
   color: #8eb5b4;
-  /*AZUL*/
 }
 
 section h2,
@@ -510,12 +520,9 @@ section h2,
 
 .news article h1 a {
   color: #9e6bb8;
-  /*LILA*/
 }
-
 .news article h1 a:hover {
   background: #9e6bb8;
-  /*LILA*/
   color: #FFF;
 }
 
@@ -646,51 +653,41 @@ section {
   color: #9e6bb8;
 }
 
-/*LILA*/
 .nav-bar nav li a[href*=shop] {
   color: #a2bf6d;
 }
 
-/*VERDE*/
 .nav-bar nav li a[href*=shop]:hover {
   background: #a2bf6d;
 }
 
-/*VERDE*/
 .nav-bar nav li a[href*=works] {
   color: #ef939e;
 }
 
-/*ROSA*/
 .nav-bar nav li a[href*=works]:hover {
   background: #ef939e;
 }
 
-/*ROSA*/
 .nav-bar nav li a[href*=about] {
   color: #8eb5b4;
 }
 
-/*AZUL*/
 .nav-bar nav li a[href*=about]:hover {
   background: #8eb5b4;
 }
 
-/*AZUL*/
 .nav-bar nav li a[href*=mailto] {
   color: #e3bd58;
 }
 
-/*AMARILLO*/
 .nav-bar nav li a[href*=mailto]:hover {
   background: #e3bd58;
 }
 
-/*AMARILLO*/
 .nav-bar nav li a:hover {
   color: #fff;
   background: #9e6bb8;
-  /*LILA*/
 }
 
 /* =2.3 - MENU SOCIAL (#main-nav)
@@ -699,12 +696,11 @@ section {
   float: right;
   height: 34px;
 }
-
 .nav-bar #menu-social li {
-  display: inline-block;
+  float: left;
   list-style: none;
+  margin-right: 10px;
 }
-
 .nav-bar #menu-social li a {
   background-repeat: no-repeat;
   direction: ltr;
@@ -715,16 +711,13 @@ section {
   width: 34px;
   height: 34px;
 }
-
 .nav-bar #menu-social li a[href*=twitter] {
   background-image: url("images/social-twitter.png");
 }
-
 .nav-bar #menu-social li a[href*=flickr] {
   background-image: url("images/social-flickr.png");
 }
-
-.nav-bar #menu-social li a:hover {
+.nav-bar #menu-social li a[href*=twitter]:hover, .nav-bar #menu-social li a[href*=flickr]:hover {
   -moz-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
   -o-transform: rotate(360deg);
@@ -736,7 +729,24 @@ section {
   -ms-transition: -ms-transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out;
 }
+.nav-bar #menu-social li a[href*=subscribe] {
+  color: #e3bd58;
+  line-height: 34px;
+  font-family: 'Yanone Kaffeesatz', Courier, monospace;
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-indent: 0;
+  width: auto;
+  height: 34px;
+}
+.nav-bar #menu-social li a[href*=subscribe]:before, .nav-bar #menu-social li a[href*=subscribe]:after {
+  content: ' · ';
+}
+.nav-bar #menu-social li a[href*=subscribe]:hover {
+  color: #FFF;
+}
 
+/* NEWSLETTER*/
 /*----------------------------------------------------------------------------------*/
 /* =3 - FOOTER
 ------------------------------------------------------------------------------------*/
@@ -884,7 +894,7 @@ footer {
 .comment-meta {
   background: #E6E6E6;
   border-radius: 0;
-  color: #666666;
+  color: #666;
   font-size: 81.25%;
   margin: 0 0 1em;
   padding: 6px 12px;
@@ -894,7 +904,7 @@ footer {
 
 .commentlist .avatar {
   border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 1px 2px #CCCCCC;
+  box-shadow: 0 1px 2px #CCC;
   padding: 0;
   position: absolute;
   top: 0;
@@ -961,8 +971,4 @@ footer {
 
 .cf:after {
   clear: both;
-}
-
-.cf {
-  zoom: 1;
 }
