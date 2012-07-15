@@ -29,7 +29,7 @@
       
       <p>About UPDATES:</p>
       <p>There is a limit of "1 item per person, per update" policy. You can only buy one item at each update. An update consists of all items available at a specific time and day, including all three different times in one day. So you can only buy one item from those available at that day.</p>
-      <p>In the case of multiple quantities of the same item, we will make sure to distribute them in the three different hours, and inform about what will be available at each time.</p>
+      <p>We will make sure to distribute the items in the three different hours, and inform about what will be available at each time.</p>
       <p>This does not include the items already on the shop, you can buy them freely without quantity restriction.</p>
       <p>Set up time and limitation of quantity should help to reach as many people as possible. Thank you very much for your understanding!</p>
       <p>In the case of an item getting a duplicate order from two different customers, we'll give priority on a first come first serve basis.</p>
